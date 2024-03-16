@@ -18,6 +18,7 @@ export default {
       "gray-100": "#e1e1e6",
       "cyan-500": "#81d8f7",
       "cyan-300": "#9be1fb",
+      "orange-700": "#c2410c",
     },
     extend: {
       fontFamily: {
