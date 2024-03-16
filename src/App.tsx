@@ -24,9 +24,9 @@ function Exemple() {
       <div>
         <h1 className="font-bold text-gray-900/80">Compre hoje!!!!!!!!</h1>
         <p className="text-xs text-gray-400">
-          Na semana do consumidor, os preços estão um absurdo!
+          Na semana do consumidor, os preços estão um absurdo! não perca está
+          oportunidade!
         </p>
-        <p className="text-xs text-gray-400">não perca está oportunidade!</p>
       </div>
     </div>
   );
