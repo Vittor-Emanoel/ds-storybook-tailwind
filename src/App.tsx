@@ -36,20 +36,15 @@ export function App() {
   return (
     <div className="w-full h-screen flex">
       <div className="max-w-80 bg-gray-100 flex flex-col gap-3 m-auto ">
-        <ActionHeader />
-        {Array.from({ length: 4 }).map((_, index) => (
-          <Exemple key={index} />
-        ))}
+        <CheckBox.Root>
+          <CheckBox.Input checked onChange={() => {}} className="" />
+          <CheckBox.Label>Lembre-me</CheckBox.Label>
+        </CheckBox.Root>
+
+        <CheckBox.Root>
+          <CheckBox.Input checked onChange={() => {}} className="" />
+        </CheckBox.Root>
       </div>
     </div>
   );
 }
-
-<CheckBox.Root>
-  <CheckBox />
-</CheckBox.Root>;
-
-<CheckBox.Root>
-  <CheckBox />
-  <CheckBoxLabel>Lembre-me</CheckBoxLabel>
-</CheckBox.Root>;
