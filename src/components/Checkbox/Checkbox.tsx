@@ -20,6 +20,7 @@ export default function CheckboxInput({
   return (
     <div className="flex items-center">
       <label
+        htmlFor="checkbox"
         className={cn(
           "relative flex items-center cursor-pointer p-[10px] ",
           disabled && "cursor-not-allowed",
@@ -28,10 +29,13 @@ export default function CheckboxInput({
       >
         <input
           type="checkbox"
+          id="checkbox"
           className="before:content[''] peer relative h-5 w-5 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed appearance-none rounded-md border-2 border-zinc-400/70 hover:border-zinc-400 transition-colors"
           checked={checked}
           onChange={onChange}
           disabled={disabled}
+          aria-checked={checked}
+          aria-disabled={disabled}
         />
         <span className="absolute text-white transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
           <Check
@@ -45,14 +49,14 @@ export default function CheckboxInput({
       </label>
 
       {label && (
-        <label
+        <span
           className={cn(
             "pl-3 font-light text-zinc-700 cursor-pointer",
             disabled && "opacity-50"
           )}
         >
           {label}
-        </label>
+        </span>
       )}
     </div>
   );
