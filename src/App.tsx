@@ -1,4 +1,6 @@
+import { useState } from "react";
 import Checkbox from "./components/Checkbox/Checkbox";
+import { Select } from "./components/Input";
 import "./styles/global.css";
 
 function ActionHeader() {
@@ -33,14 +35,42 @@ function Exemple() {
 }
 
 export function App() {
+  const options = [
+    { value: "Português", label: "Português" },
+    { value: "Espanhol", label: "Espanhol" },
+    { value: "Russo", label: "Russo" },
+  ];
+
+  const options2 = [
+    { value: "UCT- Brasilia", label: "UCT- Brasilia" },
+    { value: "UCT-Belo Horizonte", label: "UCT-Belo Horizonte" },
+    { value: "UCT-Panamá", label: "UTO-Panamá" },
+  ];
+
+  const [selectedOption, setSelectedOption] = useState("");
+
+  const handleSelectChange = (value: any) => {
+    setSelectedOption(value);
+  };
+
   return (
-    <div className="w-full h-screen flex">
-      <div className="max-w-80 bg-gray-100 flex flex-col gap-3 m-auto ">
-        <ActionHeader />
-        {Array.from({ length: 4 }).map((_, index) => (
-          <Exemple key={index} />
-        ))}
-      </div>
+    <div className=" mx-auto mt-5 max-w-[400px] space-y-4">
+      <h1 className="text-2xl font-bold mb-4">
+        Exemplo de Uso do Componente Select
+      </h1>
+      <Select
+        placeholder="Idioma"
+        options={options}
+        value={selectedOption}
+        onChange={handleSelectChange}
+      />
+      <Select
+        placeholder="Fuso horário"
+        options={options2}
+        value={selectedOption}
+        onChange={handleSelectChange}
+      />
+      <p className="mt-4">Opção selecionada: {selectedOption}</p>
     </div>
   );
 }
